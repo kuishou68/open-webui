@@ -149,7 +149,7 @@ class AuthsTable:
             user = Users.get_user_by_api_key(api_key, db=db)
             return user if user else None
         except Exception:
-            return False
+            return None
 
     def authenticate_user_by_email(self, email: str, db: Optional[Session] = None) -> Optional[UserModel]:
         log.info(f'authenticate_user_by_email: {email}')
